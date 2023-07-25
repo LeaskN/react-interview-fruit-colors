@@ -1,0 +1,135 @@
+/* Didnt like the default font so I changed it */
+#root{
+  font-family: Arial, Helvetica, sans-serif;
+}
+.List {
+  margin: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-auto-rows: 60px;
+  grid-gap: 16px;
+  /* Removed bullets so that hover-highlighting looked fine */
+  list-style-type: none;
+}
+
+.List__item {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.05);
+  /* 
+  Added cursor pointer to indicate boxes could be clicked.
+  Added border to allow hover and border on select without moving text
+  Swapped to display flex/center so that the font can grow when using text-transform uppercase
+  Border-radius was just a visual change
+  */  
+  cursor: pointer;
+  border: 3px solid transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+}
+/* to show that the box could be selected */
+.List__item:hover{
+  border: 3px solid rgb(130, 121, 255);
+}
+/* 
+  singular Selected item styling 
+  Using font-weight and text-transform because we dont know what color the box will be. 
+  I picked a red that doesnt seem to be in the list but for our less visually-abled
+  users I want to show that items have been selected in other ways 
+*/
+.selected{
+  border: 3px solid rgb(255, 115, 115);
+  box-shadow: 0px 0px 2px 2px rgb(75, 75, 75);
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+/* 
+  Style the list at the top of the page
+  I didnt like the list filling the page rapidly so I wanted it to 
+  fill the line first before moving to the next line
+  underline is just preference
+  margin-right is for spacing
+  then I wanted commas between selected items and didnt want a comma after the last item, so I removed that one
+*/
+.selectedListItem{
+  display: inline;
+  list-style: none;
+  text-decoration: underline;
+  margin-right: 5px;
+}
+.selectedListItem:after{
+  content: ",";
+}
+.selectedListItem:last-child:after {
+  content: "";
+}
+
+/* Taken from https://clrs.cc/ */
+
+.List__item--navy {
+  background-color: #001f3f;
+}
+
+.List__item--blue {
+  background-color: #0074d9;
+}
+
+.List__item--aqua {
+  background-color: #7fdbff;
+}
+
+.List__item--teal {
+  background-color: #39cccc;
+}
+
+.List__item--olive {
+  background-color: #3d9970;
+}
+
+.List__item--green {
+  background-color: #2ecc40;
+}
+
+.List__item--lime {
+  background-color: #01ff70;
+}
+
+.List__item--yellow {
+  background-color: #ffdc00;
+}
+
+.List__item--orange {
+  background-color: #ff851b;
+}
+
+.List__item--red {
+  background-color: #ff4136;
+}
+
+.List__item--maroon {
+  background-color: #85144b;
+}
+
+.List__item--fuchsia {
+  background-color: #f012be;
+}
+
+.List__item--purple {
+  background-color: #b10dc9;
+}
+
+.List__item--black {
+  background-color: #111111;
+}
+
+.List__item--gray {
+  background-color: #aaaaaa;
+}
+
+.List__item--silver {
+  background-color: #dddddd;
+}
